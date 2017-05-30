@@ -1,0 +1,10 @@
+<h1>User</h1>
+<table>
+<% @bb.each do |b|  %>
+	<tr>
+		<td><%= b.title %></td>
+		<td><%= b.date %></td>
+		<td><%= link_to "Show", event_path(b) %></td>
+	</tr>
+<% end %>
+</table>

@@ -1,0 +1,14 @@
+<%= form_for @bb , :url => boss_path(@bb,:user => "root"),:method => :patch do |f| %>
+	<%= f.label :title , "Title" %>
+	<%= f.text_field :title %>
+
+	<%= f.label :content , "Content" %>
+	<%= f.text_area :content %>
+
+	<%= f.label :date , "Date" %>
+	<%= f.date_select :date %>
+
+	<%= f.submit "Update" %>
+<% end %>
+
+<%= link_to "Back to index", boss_index_path(:user => "root")  %>

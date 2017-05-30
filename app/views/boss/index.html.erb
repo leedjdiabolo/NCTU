@@ -1,0 +1,14 @@
+<h1>Boss</h1>
+<table>
+<% @bb.each do |b|  %>
+	<tr>
+		<td><%= b.title %></td>
+		<td><%= b.date %></td>
+		<td><%= link_to "Show", boss_path(b,:user => "root") %></td>
+		<td><%= link_to "Edit", edit_boss_path(b,:user => "root") %></td>
+		<td><%= link_to "Delete", boss_path(b,:user => "root"),:method => :delete %></td>
+	</tr>
+<% end %>
+</table>
+
+<%= link_to "New", new_boss_path(:user => "root") %>
