@@ -1,14 +1,34 @@
-<h1>Boss</h1>
-<table>
-<% @bb.each do |b|  %>
-	<tr>
-		<td><%= b.title %></td>
-		<td><%= b.date %></td>
-		<td><%= link_to "Show", boss_path(b,:user => "root") %></td>
-		<td><%= link_to "Edit", edit_boss_path(b,:user => "root") %></td>
-		<td><%= link_to "Delete", boss_path(b,:user => "root"),:method => :delete %></td>
-	</tr>
-<% end %>
-</table>
+<div class="jumbotron" id="head">
+	<div class="container">
+		<h1>Root</h1>
+	</div>
+</div>
 
-<%= link_to "New", new_boss_path(:user => "root") %>
+<div id="tool">
+	<div class="container">
+		<h3>Toolbar</h3>
+		<%= link_to "<button class='btn btn-primary'>New</button>".html_safe, new_boss_path(:user => "root") %>
+	</div>
+	<br>
+</div>
+<div id="body">
+	<div class="container">
+		<table class="t table table-striped table-bordered">
+		<tr>
+			<th>Title</th>
+			<th>Date</th>
+			<th>Action</th>
+		</tr>
+			<% @bb.each do |b|  %>
+				<tr>
+					<td><%= b.title %></td>
+					<td><%= b.date %></td>
+					<td>
+						<%= link_to "<button class='btn btn-info'>Show</button>".html_safe, boss_path(b,:user => "root") %>
+						<%= link_to "<button class='btn btn-info'>Edit</button>".html_safe, edit_boss_path(b,:user => "root") %>
+						<%= link_to "<button class='btn btn-info'>Delete</button>".html_safe, boss_path(b,:user => "root"),:method => :delete %>
+				</tr>
+			<% end %>
+		</table>
+	</div>
+</div>

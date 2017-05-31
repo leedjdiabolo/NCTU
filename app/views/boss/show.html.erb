@@ -1,4 +1,23 @@
-<%= @bb.title %>
-<%= @bb.content %>
-<%= @bb.date %>
-<%= link_to "Back to index", boss_index_path(:user => "root") %>
+<div class="jumbotron" id="head">
+	<div class="container">
+		<h1>Root Content</h1>
+	</div>
+</div>
+<div id="body">
+	<div class="container">
+		<table class="t table table-striped table-bordered">
+		<tr>
+			<th>Title</th>
+			<th>Content</th>
+			<th>Date</th>
+			<th>Action</th>
+		</tr>
+			<tr>
+				<td><%= @bb.title %></td>
+				<td><%= @bb.content %></td>
+				<td><%= @bb.date %></td>
+				<td><button class="btn btn-info"><%= link_to "Back to index", boss_index_path(:user => "root") %></button></td>
+			</tr>
+		</table>
+	</div>
+</div>

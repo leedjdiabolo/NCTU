@@ -1,4 +1,23 @@
-<%= @bb.title %>
-<%= @bb.content %>
-<%= @bb.date %>
-<%= link_to "Back to index", events_path %>
+<div class="jumbotron" id="head">
+	<div class="container">
+		<h1>User Content</h1>
+	</div>
+</div>
+<div id="body">
+	<div class="container">
+		<table class="t table table-striped table-bordered">
+		<tr>
+			<th>Title</th>
+			<th>Content</th>
+			<th>Date</th>
+			<th>Action</th>
+		</tr>
+			<tr>
+				<td><%= @bb.title %></td>
+				<td><%= @bb.content %></td>
+				<td><%= @bb.date %></td>
+				<td><%= link_to "<button class='btn btn-info'>Back</button>".html_safe, events_path %></td>
+			</tr>
+		</table>
+	</div>
+</div>

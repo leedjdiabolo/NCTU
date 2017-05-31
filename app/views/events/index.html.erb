@@ -1,10 +1,23 @@
-<h1>User</h1>
-<table>
-<% @bb.each do |b|  %>
-	<tr>
-		<td><%= b.title %></td>
-		<td><%= b.date %></td>
-		<td><%= link_to "Show", event_path(b) %></td>
-	</tr>
-<% end %>
-</table>
+<div class="jumbotron" id="head">
+	<div class="container">
+		<h1>User</h1>
+	</div>
+</div>
+<div id="body">
+	<div class="container">
+		<table class="t table table-striped table-bordered">
+		<tr>
+			<th>Title</th>
+			<th>Date</th>
+			<th>Action</th>
+		</tr>
+		<% @bb.each do |b|  %>
+			<tr>
+				<td><%= b.title %></td>
+				<td><%= b.date %></td>
+				<td><%= link_to "<button class='btn btn-info'>Show</button>".html_safe, event_path(b) %></td>
+			</tr>
+		<% end %>
+		</table>
+	</div>
+</div>

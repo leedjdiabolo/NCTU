@@ -1,14 +1,25 @@
-<%= form_for @bb , :url => boss_index_path(:user => "root") do |f| %>
-	<%= f.label :title , "Title" %>
-	<%= f.text_field :title %>
+<div class="jumbotron" id="head">
+	<div class="container">
+		<h1>Root New</h1>
+	</div>
+</div>
 
-	<%= f.label :content , "Content" %>
-	<%= f.text_area :content %>
+<div id="body">
+	<div class="container">
+		<%= form_for @bb , :url => boss_index_path(:user => "root") do |f| %>
+			<%= f.label :title , "Title" %>
+			<%= f.text_field :title %>
 
-	<%= f.label :date , "Date" %>
-	<%= f.date_select :date %>
+			<%= f.label :content , "Content" %>
+			<%= f.text_area :content %>
 
-	<%= f.submit "New" %>
-<% end %>
+			<%= f.label :date , "Date" %>
+			<%= f.date_select :date %>
 
-<%= link_to "Back to index", boss_index_path(:user => "root")  %>
+			<%= f.submit "New",:class => "btn btn-success" %>
+		<% end %>
+
+		<br>
+		<%= link_to "<button class='btn btn-warning'>Back to Index</button>".html_safe, boss_index_path(:user => "root")  %>
+	</div>
+</div>
