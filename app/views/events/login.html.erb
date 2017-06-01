@@ -1,0 +1,23 @@
+<div class="jumbotron" id="head">
+	<div class="container">
+		<h1>Login</h1>
+	</div>
+</div>
+
+<div id="body">
+	<div class="container">
+		<%= form_for @user , :url => events_verify_path do |f| %>
+			<%= f.label :user , "User" %>
+			<%= f.text_field :user %>
+			<br><br>
+			<%= f.label :password , "Password" %>
+			<%= f.password_field :password %>
+			<br><br>
+			<div id="error"><%= flash[:error] %></div>
+			<br>
+			<%= f.submit "Login",:class => "btn btn-success" %>
+		<% end %>
+
+		<%= link_to "<button class='btn btn-warning'>Back to Index</button>".html_safe, boss_index_path %>
+	</div>
+</div>

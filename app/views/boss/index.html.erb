@@ -7,7 +7,8 @@
 <div id="tool">
 	<div class="container">
 		<h3>Toolbar</h3>
-		<%= link_to "<button class='btn btn-primary'>New</button>".html_safe, new_boss_path(:user => "root") %>
+		<%= link_to "<button class='btn btn-primary'>New</button>".html_safe, new_boss_path %>
+		<%= link_to "<button class='btn btn-danger'>Logout</button>".html_safe, boss_logout_path %>
 	</div>
 	<br>
 </div>
@@ -24,9 +25,9 @@
 					<td><%= b.title %></td>
 					<td><%= b.date %></td>
 					<td>
-						<%= link_to "<button class='btn btn-info'>Show</button>".html_safe, boss_path(b,:user => "root") %>
-						<%= link_to "<button class='btn btn-info'>Edit</button>".html_safe, edit_boss_path(b,:user => "root") %>
-						<%= link_to "<button class='btn btn-info'>Delete</button>".html_safe, boss_path(b,:user => "root"),:method => :delete %>
+						<%= link_to "<button class='btn btn-info'>Show</button>".html_safe, boss_path(b) %>
+						<%= link_to "<button class='btn btn-info'>Edit</button>".html_safe, edit_boss_path(b) %>
+						<%= link_to "<button class='btn btn-info'>Delete</button>".html_safe, boss_path(b),:method => :delete %>
 				</tr>
 			<% end %>
 		</table>

@@ -6,20 +6,19 @@
 
 <div id="body">
 	<div class="container">
-		<%= form_for @bb , :url => boss_index_path(:user => "root") do |f| %>
+		<%= form_for @bb , :url => boss_index_path do |f| %>
 			<%= f.label :title , "Title" %>
 			<%= f.text_field :title %>
-
+			<br><br>
 			<%= f.label :content , "Content" %>
 			<%= f.text_area :content %>
-
+			<br><br>
 			<%= f.label :date , "Date" %>
 			<%= f.date_select :date %>
-
+			<br><br>
 			<%= f.submit "New",:class => "btn btn-success" %>
 		<% end %>
 
-		<br>
-		<%= link_to "<button class='btn btn-warning'>Back to Index</button>".html_safe, boss_index_path(:user => "root")  %>
+		<%= link_to "<button class='btn btn-warning'>Back to Index</button>".html_safe, boss_index_path %>
 	</div>
 </div>
